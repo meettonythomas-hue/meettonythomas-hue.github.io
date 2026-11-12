@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tony Thomas · Lead Magento 2 / Adobe Commerce Engineer</title>
+<meta name="description" content="Tony Thomas — Adobe Certified Magento 2 / Adobe Commerce lead engineer with 9+ years building B2B and B2C commerce for clients in Switzerland, the US and India. Available for remote work.">
+<meta property="og:title" content="Tony Thomas · Lead Magento 2 / Adobe Commerce Engineer">
+<meta property="og:description" content="9+ years of Magento 2 & Adobe Commerce: migrations, headless GraphQL, ERP integrations, performance. Available for remote work.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f3ee; --paper:#fffdf9; --ink:#1b1a17; --muted:#5f5b53; --line:#e3ddd2;
+    --accent:#d9480f; --accent-soft:#fbe6dc; --ok:#2f7d4f;
+    --radius:14px; --max:1080px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#14130f; --paper:#1c1b17; --ink:#f1ece3; --muted:#a8a194; --line:#2e2c26;
+           --accent:#ff7a3d; --accent-soft:#3a2418; --ok:#6cc58f; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:650;line-height:1.15;margin:0}
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  nav .brand{font-family:Fraunces,serif;font-weight:650;text-decoration:none;font-size:1.1rem}
+  nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+  nav ul a{text-decoration:none;color:var(--muted);font-size:.92rem}
+  nav ul a:hover{color:var(--ink)}
+  @media (max-width:720px){ nav ul{display:none} }
+
+  /* hero */
+  .hero{padding:84px 0 56px}
+  .status{display:inline-flex;align-items:center;gap:8px;color:var(--ok);margin-bottom:22px}
+  .status i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 20%,transparent)}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);letter-spacing:-.02em;max-width:20ch}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p.lead{font-size:1.15rem;color:var(--muted);max-width:60ch;margin:22px 0 30px}
+  .ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid var(--ink);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary{background:var(--ink);color:var(--bg)}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:56px}
+  .facts div{background:var(--paper);padding:20px}
+  .facts b{display:block;font-family:Fraunces,serif;font-size:1.7rem;font-weight:650}
+  .facts span{color:var(--muted);font-size:.88rem}
+  @media (max-width:720px){ .facts{grid-template-columns:repeat(2,1fr)} }
+
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:34px;flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(1.8rem,3.5vw,2.4rem)}
+  .sec-head p{color:var(--muted);max-width:46ch;margin:0}
+
+  /* case studies */
+  .cases{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media (max-width:820px){ .cases{grid-template-columns:1fr} }
+  .case{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column}
+  .case .meta{display:flex;justify-content:space-between;color:var(--muted);margin-bottom:12px}
+  .case h3{font-size:1.35rem;margin-bottom:12px}
+  .case dl{margin:0 0 16px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.95rem}
+  .case dt{font-weight:600;color:var(--accent)}
+  .case dd{margin:0;color:var(--muted)}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+  .tags span{font-size:.78rem;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
+
+  /* own work */
+  .own{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:900px){ .own{grid-template-columns:1fr} }
+  .own article{border:1px dashed color-mix(in srgb,var(--accent) 55%,var(--line));border-radius:var(--radius);padding:24px;background:var(--paper)}
+  .own h3{font-size:1.2rem;margin:10px 0}
+  .own p{color:var(--muted);font-size:.95rem;margin:0 0 12px}
+  .own ul{margin:0;padding-left:18px;color:var(--muted);font-size:.92rem}
+  .badge{display:inline-block;color:var(--accent)}
+
+  /* timeline */
+  .timeline{list-style:none;margin:0;padding:0}
+  .timeline li{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .timeline li:last-child{border-bottom:0}
+  .timeline .when{color:var(--muted)}
+  .timeline h3{font-size:1.15rem}
+  .timeline .org{color:var(--accent);font-weight:600;font-size:.95rem;margin:2px 0 8px}
+  .timeline p{margin:0;color:var(--muted);font-size:.95rem}
+  @media (max-width:640px){ .timeline li{grid-template-columns:1fr;gap:6px} }
+
+  /* skills */
+  .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  @media (max-width:820px){ .skills{grid-template-columns:1fr} }
+  .skills h3{font-size:1.05rem;margin-bottom:12px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips span{border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:5px 11px;font-size:.88rem}
+  .creds{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+  @media (max-width:640px){ .creds{grid-template-columns:1fr} }
+  .creds div{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .creds b{display:block;margin-bottom:4px}
+  .creds span{color:var(--muted);font-size:.92rem}
+
+  /* contact */
+  .contact{background:var(--ink);color:var(--bg);border-radius:22px;padding:56px 40px;text-align:center}
+  .contact h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:14px}
+  .contact p{color:color-mix(in srgb,var(--bg) 70%,var(--ink));max-width:56ch;margin:0 auto 28px}
+  .contact .btn{border-color:var(--bg)}
+  .contact .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .contact .ctas{justify-content:center}
+  .contact .btn:not(.primary){color:var(--bg)}
+  footer{padding:36px 0 48px;color:var(--muted);font-size:.85rem;text-align:center}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Tony Thomas</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#own">Own projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="status mono"><i></i>Open to remote roles &amp; contracts</div>
+    <h1>I build and fix <em>Magento&nbsp;2</em> stores that run real businesses.</h1>
+    <p class="lead">Lead Software Engineer with 9+ years on Magento 2 and Adobe Commerce: migrations, headless GraphQL, ERP and payment integrations, and performance work for B2B and B2C stores in Switzerland, the United States and India.</p>
+    <div class="ctas">
+      <a class="btn primary" href="mailto:meettonythomas@gmail.com">Email me</a>
+      <a class="btn" href="#work">See my work</a>
+      <a class="btn" data-link="resume" href="resume.pdf" download>Download résumé</a>
+      <a class="btn" data-link="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" data-link="github" href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+
+    <div class="facts">
+      <div><b>9+ yrs</b><span>Magento &amp; PHP in production</span></div>
+      <div><b>Adobe</b><span>Certified Expert, Magento Commerce Developer</span></div>
+      <div><b>3 markets</b><span>Clients in Switzerland, the US and India</span></div>
+      <div><b>IST · UTC+5:30</b><span>Comfortable overlapping CET and UK hours</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Selected work</h2>
+      <p>Client projects I've led or built. Client code stays private; these summarise the problem, my role and the approach.</p>
+    </div>
+
+    <div class="cases">
+      <article class="case">
+        <div class="meta mono"><span>Switzerland · Sports retail</span><span>Lead</span></div>
+        <h3>Unihockey.ch: Magento 1 → 2 migration</h3>
+        <dl>
+          <dt>Problem</dt><dd>A long-running Magento 1 store had to move to Magento 2 without losing products, customers, orders or content.</dd>
+          <dt>Built</dt><dd>Led the full migration with data integrity checks, then the 2.4.x upgrades that followed. Added a barcode-scan buying flow with customer-group pricing.</dd>
+        </dl>
+        <div class="tags"><span>Magento 1→2</span><span>Data migration</span><span>Upgrades</span><span>Swiss payments</span></div>
+      </article>
+
+      <article class="case">
+        <div class="meta mono"><span>Switzerland · Sports retail</span><span>Lead</span></div>
+        <h3>Sportshop.ch: multi-website Magento 2.4.7</h3>
+        <dl>
+          <dt>Problem</dt><dd>A Swiss retailer needed several storefronts on one platform, connected to its ERP and local payment providers.</dd>
+          <dt>Built</dt><dd>End-to-end Magento 2.4.7 multi-website setup with Bexio ERP integration, Swiss payment gateways (PostFinance, Saferpay) and Digitec Galaxus product feeds.</dd>
+        </dl>
+        <div class="tags"><span>Multi-store</span><span>Bexio ERP</span><span>PostFinance</span><span>Saferpay</span></div>
+      </article>
+
+      <article class="case">
+        <div class="meta mono"><span>United States · Automotive</span><span>Senior backend</span></div>
+        <h3>Toyota Vehicle Parts: headless Magento 2</h3>
+        <dl>
+          <dt>Problem</dt><dd>The parts storefront ran on Adobe Experience Manager and needed Magento as a headless commerce engine.</dd>
+          <dt>Built</dt><dd>A headless Magento 2 backend integrated with AEM, plus custom GraphQL endpoints for the frontend's data and interactions.</dd>
+        </dl>
+        <div class="tags"><span>Headless</span><span>GraphQL</span><span>AEM</span></div>
+      </article>
+
+      <article class="case">
+        <div class="meta mono"><span>United States · Logistics real estate</span><span>Senior developer</span></div>
+        <h3>Prologis: B2B marketplace</h3>
+        <dl>
+          <dt>Problem</dt><dd>Prologis needed a B2B marketplace where vendors list products and buyers either order or ask for quotes.</dd>
+          <dt>Built</dt><dd>A Magento 2 marketplace with vendor product listings, direct ordering and quote-request workflows.</dd>
+        </dl>
+        <div class="tags"><span>B2B</span><span>Marketplace</span><span>Quotes</span></div>
+      </article>
+
+      <article class="case">
+        <div class="meta mono"><span>Switzerland · National railway</span><span>Developer</span></div>
+        <h3>SBB: multilingual, multi-currency store</h3>
+        <dl>
+          <dt>Problem</dt><dd>Switzerland's national railway needed one store serving several languages and currencies with accurate regional prices.</dd>
+          <dt>Built</dt><dd>A multilingual, multi-currency Magento 2 store with real-time exchange rates pulled from third-party APIs.</dd>
+        </dl>
+        <div class="tags"><span>i18n</span><span>Multi-currency</span><span>3rd-party APIs</span></div>
+      </article>
+
+      <article class="case">
+        <div class="meta mono"><span>India · Jewellery e-commerce</span><span>Lead (current)</span></div>
+        <h3>Candere: Adobe Commerce Cloud</h3>
+        <dl>
+          <dt>Problem</dt><dd>An online jewellery brand with custom-designed products depends on logistics, CRM and order-management systems working together.</dd>
+          <dt>Built</dt><dd>Jewellery customisation workflows and integrations with ClickPost, Salesforce and the OMS. I also handle production troubleshooting.</dd>
+        </dl>
+        <div class="tags"><span>Adobe Commerce Cloud</span><span>Salesforce</span><span>ClickPost</span><span>OMS</span></div>
+      </article>
+
+      <article class="case">
+        <div class="meta mono"><span>Switzerland · Shopify app</span><span>Developer</span></div>
+        <h3>Swiss QR-Bill app for Shopify</h3>
+        <dl>
+          <dt>Problem</dt><dd>Swiss merchants on Shopify need legally formatted QR bills on their orders.</dd>
+          <dt>Built</dt><dd>A custom Shopify app that generates QR bills as PDFs when an order is created (React Router, Prisma and SQLite, swissqrbill and PDFKit, order webhooks).</dd>
+        </dl>
+        <div class="tags"><span>Shopify CLI</span><span>React Router</span><span>Prisma</span><span>Webhooks</span></div>
+      </article>
+
+      <article class="case">
+        <div class="meta mono"><span>United States · Car accessories</span><span>Developer</span></div>
+        <h3>Cartoys: storefront → Adobe Commerce</h3>
+        <dl>
+          <dt>Problem</dt><dd>A US retailer grew from a custom Magento 2 storefront to needing the enterprise edition.</dd>
+          <dt>Built</dt><dd>The original theme and storefront, including in-store pickup and performance work. Later, the code and data migration from Magento Open Source to Adobe Commerce.</dd>
+        </dl>
+        <div class="tags"><span>Theming</span><span>In-store pickup</span><span>Adobe Commerce migration</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="own">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Own projects &amp; AI work</h2>
+      <p>Tools I've built to make engineering teams faster. This is where I'm heading next.</p>
+    </div>
+    <div class="own">
+      <article>
+        <span class="badge mono">AI · DevOps</span>
+        <h3>Cursor × Azure DevOps via MCP</h3>
+        <p>An AI-assisted development workflow that connects the Cursor IDE to a self-hosted Azure DevOps server through MCP servers.</p>
+        <ul>
+          <li>Slash commands cover the whole lifecycle: /create_userstory, /task, /bug, /review_code, /review_pr, /test, /commit, /pr</li>
+          <li>Runs Magento PHPUnit tests and assigns reviewers automatically</li>
+          <li>Rolled out to the team with handover docs and walkthroughs</li>
+        </ul>
+      </article>
+      <article>
+        <span class="badge mono">AI · Architecture</span>
+        <h3>AI-assisted Magento sync engine</h3>
+        <p>Architecture for automating product, stock and order sync, invoice creation and shipment processing in Magento 2.</p>
+        <ul>
+          <li>Keeps deterministic sync logic separate from AI orchestration</li>
+          <li>Built for ERP-heavy stores like the Swiss projects above</li>
+        </ul>
+      </article>
+      <article>
+        <span class="badge mono">In progress · Node.js</span>
+        <h3>Magento order tracker</h3>
+        <p>A web app that tracks orders across Magento stores in one place, for ops teams juggling several storefronts.</p>
+        <ul>
+          <li>Node.js service using Magento's REST APIs</li>
+          <li>Demo coming soon</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head"><h2>Experience</h2><p>Nine years, from storefront developer to lead engineer.</p></div>
+    <ol class="timeline">
+      <li><div class="when mono">Jul 2026 – now</div><div><h3>Lead Software Engineer</h3><div class="org">Kalyan Jewellers (Candere) · Kochi</div><p>Adobe Commerce Cloud platform, jewellery customisation, ClickPost, Salesforce and OMS integrations, and production reliability.</p></div></li>
+      <li><div class="when mono">May 2022 – Jun 2026</div><div><h3>Associate Lead Software Engineer</h3><div class="org">PIT Solutions · Kochi</div><p>Magento lead for Swiss clients (Unihockey.ch, Sportshop.ch), Bexio ERP and Swiss payment integrations, a Shopify QR-Bill app, and the team's AI DevOps workflow.</p></div></li>
+      <li><div class="when mono">Jun 2020 – May 2022</div><div><h3>Associate Consultant</h3><div class="org">Infosys · Trivandrum</div><p>Senior Magento developer on Prologis (B2B marketplace) and Toyota Vehicle Parts (headless Magento with AEM and GraphQL).</p></div></li>
+      <li><div class="when mono">Oct 2019 – Apr 2020</div><div><h3>Senior Software Engineer</h3><div class="org">Neologix Software Solutions · Trivandrum</div><p>Migrated Cartoys from Magento Open Source to Adobe Commerce.</p></div></li>
+      <li><div class="when mono">Sep 2018 – Oct 2019</div><div><h3>Software Engineer</h3><div class="org">PIT Solutions · Trivandrum</div><p>Multilingual, multi-currency Magento 2 store for SBB, Switzerland's national railway.</p></div></li>
+      <li><div class="when mono">Sep 2016 – Sep 2018</div><div><h3>Associate Software Engineer</h3><div class="org">Neologix Software Solutions · Trivandrum</div><p>Magento 2 storefront, theme, in-store pickup and performance work for Cartoys (US).</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><h2>Skills</h2><p>What I use day to day.</p></div>
+    <div class="skills">
+      <div><h3>Commerce</h3><div class="chips"><span>Magento 2</span><span>Adobe Commerce</span><span>Adobe Commerce Cloud</span><span>Shopify apps</span><span>Shopware</span><span>B2B &amp; marketplaces</span><span>Multi-store</span><span>Migrations &amp; upgrades</span></div></div>
+      <div><h3>Engineering</h3><div class="chips"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>KnockoutJS</span><span>GraphQL</span><span>REST APIs</span><span>Webhooks</span><span>Node.js</span><span>Composer</span><span>Git</span><span>PHPUnit</span></div></div>
+      <div><h3>Performance &amp; integration</h3><div class="chips"><span>Varnish</span><span>Redis</span><span>Full-page cache</span><span>RabbitMQ</span><span>Bexio</span><span>Odoo</span><span>Salesforce</span><span>ClickPost</span><span>PostFinance</span><span>Saferpay</span><span>MCP &amp; AI tooling</span></div></div>
+    </div>
+    <div class="creds">
+      <div><b>Adobe Certified Expert – Magento Commerce Developer</b><span>Adobe Certified Professional</span></div>
+      <div><b>B.Tech, Computer Science Engineering</b><span>College of Engineering, Kidangoor · 2016</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="border-top:0">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Need a Magento engineer who owns the outcome?</h2>
+      <p>I'm open to full-time remote roles and long-term contracts with teams in Europe, the UK and the US. I can start within 15 days.</p>
+      <div class="ctas">
+        <a class="btn primary" href="mailto:meettonythomas@gmail.com?subject=Magento%20project">meettonythomas@gmail.com</a>
+        <a class="btn" data-link="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="y"></span> Tony Thomas · Kochi, India</footer>
+
+<script>
+  // ---- Edit these three lines, then push. Leave a value empty to hide that button. ----
+  const LINKS = {
+    linkedin: "",          // e.g. "https://www.linkedin.com/in/your-handle"
+    github:   "https://github.com/meettonythomas-hue",
+    resume:   ""           // upload resume.pdf to the repo, then set this to "resume.pdf"
+  };
+  document.querySelectorAll("[data-link]").forEach(a => {
+    const url = LINKS[a.dataset.link];
+    if (url) a.href = url; else a.hidden = true;
+  });
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
